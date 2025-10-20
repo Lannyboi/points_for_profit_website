@@ -1,0 +1,29 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+nav {
+    background-color: #4B2E2E;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.points_for_profit_logo {
+    margin-left: 20px;
+    height: 50px;
+}
+
+.burger-icon {
+    margin-right: 20px;
+    height: 40px;
+}
+
+.nav-list > a {
+    color: #F9F8F8;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
