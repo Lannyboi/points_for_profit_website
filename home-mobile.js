@@ -1,9 +1,11 @@
-const menu = document.getElementById("menu")
+const menu = document.getElementById("menu");
 
 function toggleMenu() {
-    if (menu.style.display === "block") {
-        menu.style.display = "none";
-    } else {
-        menu.style.display = "block";
-    }
+    menu.style.display = (menu.style.display === "block") ? "none" : "block";
 }
+
+window.addEventListener("resize", () => {
+    if (window.innerWidth >= 768) {
+        menu.style.display = "none";
+    }
+});

@@ -43,7 +43,7 @@ nav {
     justify-content: center;
     align-items: center;
     gap: 40px;
-    padding: 20px 0px;
+    padding: 20px 0px 40px 0px;
 }
 
 #menu-container > a {
@@ -52,6 +52,11 @@ nav {
     color: white;
     font-size: 24px;
     font-weight: bold;
+}
+
+#menu-container > a:hover {
+    color: #C99A6B;
+    transform: scale(1.1);
 }
 
 /* Banner-image */
@@ -90,4 +95,46 @@ nav {
     font-size: 12px;
     text-decoration: underline;
     font-weight: 400;
+}
+
+/* Hide desktop menu by default (mobile first) */
+#desktop-menu {
+    display: none;
+}
+
+#desktop-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 20px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+#desktop-menu a:hover {
+    color: #C99A6B;
+    transform: scale(1.1);
+}
+
+/* ---------- Responsive ---------- */
+@media (min-width: 480px) {
+    .banner-text-container > h1 {
+        font-size: 32px;
+    }
+
+    .banner-image {
+        height: 320px; /* This will change frequently for responsivness */
+    }
+}
+
+@media (min-width: 768px) {
+    #hamburger-icon,
+    #menu {
+        display: none;
+    }
+
+    #desktop-menu {
+        display: flex;
+        align-items: center;
+        margin-right: 30px;
+    }
 }
