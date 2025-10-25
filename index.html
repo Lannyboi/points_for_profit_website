@@ -16,18 +16,36 @@
 
     <!-- Navbar -->
     <nav>
-        <img src="points_for_profit_logo.png" alt="Points for Profit logo">
-        <div class="nav-list">
-            <a href="/">Home</a>
-            <a href="/">Mid-Valley</a>
-            <a href="/">High Points</a>
-            <a href="/">Living Well Expo</a>
-            <a href="/">Contact</a>
-            <a href="/">Mid Valley Points Entry Portal</a>
+        <div id="navbar">
+            <img class="points_for_profit_logo" src="images/points_for_profit_logo.png" alt="points for profit logo">
+            
+            <!-- Hamburger icon (mobile only) -->
+            <a id="hamburger-icon" onclick="toggleMenu()">
+            <img src="images/burger-icon.png" alt="Menu" height="40px">
+            </a>
+
+            <!-- Desktop menu (hidden on mobile) -->
+            <div id="desktop-menu">
+                <a href="/home-mobile.html">Home</a>
+                <a href="/pages/mid-valley.html">Mid-Valley</a>
+                <a href="/pages/high-points.html">High Points</a>
+                <a href="https://turnprollc.com">Points Entry Portal</a>
+                <a href="/pages/contact.html">Contact</a>
+            </div>
+        </div>
+
+        <!-- Mobile dropdown menu -->
+        <div id="menu">
+            <div id="menu-container">
+                <a href="/home-mobile.html">Home</a>
+                <a href="/pages/mid-valley.html">Mid-Valley</a>
+                <a href="/pages/high-points.html">High Points</a>
+                <a href="https://turnprollc.com">Points Entry Portal</a>
+                <a href="/pages/contact.html">Contact</a>
+            </div>
         </div>
     </nav>
 
-    <!-- Hero Banner -->
     <div class="banner-image">
         <div class="banner-text-container">            
             <h1>Points For Profit</h1>
@@ -35,5 +53,6 @@
         </div>
     </div>
 
+    <script src="index.js"></script>
 </body>
 </html>

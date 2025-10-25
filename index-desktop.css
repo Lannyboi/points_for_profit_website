@@ -1,0 +1,102 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Inter;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+    background-color: #4B2E2E;
+}
+
+nav > img {
+    margin-left: 40px;
+}
+
+.nav-list {
+    margin-right: 100px;
+    display: flex;
+    justify-content: space-around;
+    gap: 40px;
+}
+
+.nav-list > a {
+    color: #F9F8F8;
+    text-decoration: none;
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.nav-list > a:hover {
+    color: #C99A6B;
+}
+
+.banner-image {
+    height: 800px;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), 
+    url("banner-image.png") center/cover no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner-text-container {
+    text-align: center;
+    color: #F9F8F8;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    padding: 30px 80px;
+    font-size: 100px;
+    text-shadow:
+    -2px -2px 0 #000,
+     2px -2px 0 #000,
+    -2px  2px 0 #000,
+     2px  2px 0 #000;
+}
+
+.banner-text-container > h1 {
+    color: #F9F8F8;
+    font-size: 100px;
+    text-shadow:
+    -2px -2px 0 #000,
+     2px -2px 0 #000,
+    -2px  2px 0 #000,
+     2px  2px 0 #000;
+}
+
+.banner-text-container > p {
+    color: #F9F8F8;
+    font-size: 32px;
+    text-decoration: underline;
+     text-decoration-thickness: 1px; /* thickness of the underline */
+    font-weight: 100;
+}
+
+/* Small phones (≥ 480px) */
+@media (min-width: 480px) {
+  /* Slight layout tweaks for slightly larger phones */
+}
+
+/* Tablets (≥ 768px) */
+@media (min-width: 768px) {
+  /* Tablet layout starts here */
+}
+
+/* Small laptops / iPad landscape (≥ 1024px) */
+@media (min-width: 1024px) {
+  /* Adjust grids, font sizes, banners, etc. */
+}
+
+/* Desktops (≥ 1440px) */
+@media (min-width: 1440px) {
+  /* Widen main content, adjust hero image, etc. */
+}
+
+/* Large monitors / ultrawide (≥ 1920px) */
+@media (min-width: 1920px) {
+  /* Cap widths or center main content to prevent stretching */
+}
