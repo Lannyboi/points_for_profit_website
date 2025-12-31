@@ -1,140 +1,107 @@
 * {
     margin: 0px;
     padding: 0px;
-    font-family: Inter;
+    color: white;
+    font-family: roboto, sans-serif;
 }
 
 nav {
-    background-color: #4B2E2E;
-}
+    background-color: black;
+    height: 90px;
 
-#navbar {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    height: 70px;
+    align-items: center;
 }
 
-.points_for_profit_logo {
-    margin-left: 20px;
-    height: 50px;
+#nav-logo {
+    margin-left: 10px;
 }
 
-#hamburger-icon {
-    margin-right: 20px;
-    height: 40px;
+#nav-hamburger {
+    margin-right: 25px;
 }
 
-/* Toggle menu CSS */
-#menu {
+/* Banner */
+
+#banner {
+    border-top: 1px solid white;
+    height: 200px;
+}
+
+#banner-image {
+    height: 200px;
+    width: 100%;
     position: absolute;
-    top: 70px; /* right below the navbar */
-    left: 0;
-    width: 100%;
-    background-color: #4B2E2E;
-    z-index: 10;
-
-    display: none; /* hidden by default */
+    z-index: -2;
 }
 
-#menu-container {
+#banner-shadow {
+    position: absolute;
+    z-index: -1;
+    height: 200px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#banner-text-container {
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 40px;
-    padding: 20px 0px 40px 0px;
 }
 
-#menu-container > a {
-    font-family: Inter;
-    text-decoration: none;
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-#menu-container > a:hover {
-    color: #C99A6B;
-    transform: scale(1.1);
-}
-
-/* Banner-image */
-.banner-image {
-    background-image: url("images/banner-image.png");
-    width: 100%;
-    height: 214px; /* This will change frequently for responsivness */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.banner-text-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    color: white;
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.4);
-    border-radius: 20px;
-}
-
-.banner-text-container > h1 {
-    font-size: 26px;
+#banner-h1 {
+    font-size: 32px;
     font-weight: bold;
     margin-bottom: 5px;
 }
 
-.banner-text-container > p {
-    font-size: 12px;
-    text-decoration: underline;
-    font-weight: 400;
+#banner-h2 {
+    font-size: 16px;
+    font-weight: lighter;
 }
 
-/* Hide desktop menu by default (mobile first) */
-#desktop-menu {
-    display: none;
-}
+/* How it works section */
 
-#desktop-menu a {
-    color: white;
-    text-decoration: none;
+#how-it-works-title {
+    color: black;
+    font-size: 24px;
     font-weight: bold;
-    margin: 0 20px;
-    transition: color 0.3s ease, transform 0.3s ease;
+    margin: 20px 10px;
 }
 
-#desktop-menu a:hover {
-    color: #C99A6B;
-    transform: scale(1.1);
+#how-it-works-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
 
-/* ---------- Responsive ---------- */
-@media (min-width: 480px) {
-    .banner-text-container > h1 {
-        font-size: 32px;
-    }
+/* Cards ONLY get black background */
+.hiw-card {
+    background-color: #000000;
+    margin: 0px 10px;
+    width: 280px;
 
-    .banner-image {
-        height: 320px; /* This will change frequently for responsivness */
-    }
+    border-radius: 20px;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
-@media (min-width: 768px) {
-    #hamburger-icon,
-    #menu {
-        display: none;
-    }
+/* Text */
+.hiw-card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0px;
+}
 
-    #desktop-menu {
-        display: flex;
-        align-items: center;
-        margin-right: 30px;
-    }
+.hiw-card-text {
+    font-size: 16px;
+    font-weight: lighter;
 }
