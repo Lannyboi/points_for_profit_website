@@ -63,6 +63,55 @@ nav {
     font-weight: lighter;
 }
 
+/* Sponsors */
+
+#sponsors {
+    margin: 20px 10px;
+}
+
+#sponsors-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #000;
+}
+
+/* Carousel container */
+.carousel {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Soft edge fade (optional, looks nice) */
+.carousel::before,
+.carousel::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 60px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.carousel::before {
+    left: 0;
+    background: linear-gradient(to right, #ffffff, rgba(255, 255, 255, 0));
+}
+
+.carousel::after {
+    right: 0;
+    background: linear-gradient(to left, #ffffff, rgba(255, 255, 255, 0));
+}
+
+/* Moving track */
+.carousel-track {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    will-change: transform;
+}
+
 /* How it works section */
 
 #how-it-works-title {
@@ -79,7 +128,6 @@ nav {
     justify-content: center;
 }
 
-/* Cards ONLY get black background */
 .hiw-card {
     background-color: #000000;
     margin: 0px 10px;
@@ -94,7 +142,6 @@ nav {
     text-align: center;
 }
 
-/* Text */
 .hiw-card-title {
     font-size: 18px;
     font-weight: bold;
@@ -104,4 +151,75 @@ nav {
 .hiw-card-text {
     font-size: 16px;
     font-weight: lighter;
+}
+
+/* Partner with us section */
+
+#partner-with-us {
+    margin-top: 20px;
+    background-color: black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 0px;
+}
+
+#partner-with-us-text-container {
+    margin: 0px 10px;
+    margin-bottom: 20px;
+}
+
+#partner-with-us-text-container > h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#partner-with-us-text-container > p {
+    font-size: 16px;
+    font-weight: lighter;
+    margin-left: 5px;
+}
+
+#partner-with-us-button {
+    width: 90%;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 400;
+    color: black;
+    border-radius: 10px;
+    border: none;
+    background-color: white;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+/* Contact us section */
+
+#contact-us {
+    padding: 20px 0px;
+    color: black;
+}
+
+#contact-us > h2 {
+    font-size: 18px;
+    text-align: center;
+    color: black;
+}
+
+/* Footer */
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 200;
+    background-color: black;
 }
