@@ -65,51 +65,30 @@ nav {
 
 /* Sponsors */
 
-#sponsors {
-    margin: 20px 10px;
-}
-
 #sponsors-title {
-    font-size: 24px;
-    margin-bottom: 20px;
-    font-weight: bold;
-    color: #000;
+  font-size: 24px;
+  margin: 20px 10px;
+  font-weight: bold;
+  color: #000000;
 }
 
-/* Carousel container */
-.carousel {
-    position: relative;
-    overflow: hidden;
-}
-
-/* Soft edge fade (optional, looks nice) */
-.carousel::before,
-.carousel::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    width: 60px;
-    height: 100%;
-    z-index: 2;
-    pointer-events: none;
-}
-
-.carousel::before {
-    left: 0;
-    background: linear-gradient(to right, #ffffff, rgba(255, 255, 255, 0));
-}
-
-.carousel::after {
-    right: 0;
-    background: linear-gradient(to left, #ffffff, rgba(255, 255, 255, 0));
-}
-
-/* Moving track */
-.carousel-track {
+#sponsors-carousel {
+    /* border: 2px solid red; */
+    width: max-content;
     display: flex;
     align-items: center;
-    gap: 22px;
-    will-change: transform;
+    gap: 20px;
+    animation: sponsor-scroll 5s linear infinite;
+}
+
+/* animation */
+@keyframes sponsor-scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-51%);
+  }
 }
 
 /* How it works section */

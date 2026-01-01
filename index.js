@@ -10,39 +10,52 @@ window.addEventListener("resize", () => {
     }
 }); */
 
-// Infinite sponsor carousel (duplicating items so it loops seamlessly)
+/* Sponsor scroll wheel */
 (function () {
-  const carousel = document.querySelector("#sponsors-carousel");
-  const track = carousel?.querySelector(".carousel-track");
-  if (!carousel || !track) return;
+  const viewport = document.querySelector("#sponsors-carousel");
+  const track = viewport?.querySelector(".sponsor-track");
+  const groupA = track?.querySelector(".sponsor-group");
 
-  // Duplicate items to allow seamless looping
-  const items = Array.from(track.children);
-  items.forEach((item) => {
-    const clone = item.cloneNode(true);
-    clone.setAttribute("aria-hidden", "true");
-    track.appendChild(clone);
-  });
+  if (!viewport || !track || !groupA) return;
 
-  // After duplication, we scroll half the track width then reset
   let offset = 0;
   let lastTime = performance.now();
+  const SPEED = 55; // px per second
 
-  // Speed in pixels per second (tweak this)
-  const SPEED = 55;
+  // Width of ONE group (A). We reset when we've scrolled this far.
+  let groupWidth = 0;
+
+  function measure() {
+    groupWidth = groupA.getBoundingClientRect().width;
+    // keep offset valid if something changes
+    if (groupWidth > 0) offset = offset % groupWidth;
+    lastTime = performance.now();
+  }
+
+  // Measure after layout + images load
+  requestAnimationFrame(measure);
+  window.addEventListener("load", measure);
+
+  // IMPORTANT: fix “scroll causes resize” on mobile by only reacting to width changes
+  let lastW = window.innerWidth;
+  window.addEventListener("resize", () => {
+    const w = window.innerWidth;
+    if (w === lastW) return;
+    lastW = w;
+    measure();
+  });
 
   function tick(now) {
     const dt = (now - lastTime) / 1000;
     lastTime = now;
 
-    const halfWidth = track.scrollWidth / 2;
-
-    // pause on hover
-    const isHovering = false /*If hover is wanted "carousel.matches(":hover")"" */
-
-    if (!isHovering) {
+    if (groupWidth > 0) {
       offset += SPEED * dt;
-      if (offset >= halfWidth) offset = 0;
+
+      // When we've moved one full group, snap back.
+      // This is seamless because group B is identical and currently in view.
+      if (offset >= groupWidth) offset -= groupWidth;
+
       track.style.transform = `translateX(${-offset}px)`;
     }
 
@@ -50,10 +63,4 @@ window.addEventListener("resize", () => {
   }
 
   requestAnimationFrame(tick);
-
-  // Recalc/reset on resize so it stays smooth
-  window.addEventListener("resize", () => {
-    offset = 0;
-    track.style.transform = `translateX(0px)`;
-  });
 })();
