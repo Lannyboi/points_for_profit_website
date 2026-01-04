@@ -12,55 +12,41 @@ window.addEventListener("resize", () => {
 
 /* Sponsor scroll wheel */
 (function () {
-  const viewport = document.querySelector("#sponsors-carousel");
-  const track = viewport?.querySelector(".sponsor-track");
-  const groupA = track?.querySelector(".sponsor-group");
+  const openBtn = document.getElementById("nav-hamburger");
+  const menu = document.getElementById("mobile-menu");
+  const closeBtn = document.getElementById("mobile-menu-close");
 
-  if (!viewport || !track || !groupA) return;
+  if (!openBtn || !menu || !closeBtn) return;
 
-  let offset = 0;
-  let lastTime = performance.now();
-  const SPEED = 55; // px per second
+  const links = menu.querySelectorAll(".mobile-menu-link");
 
-  // Width of ONE group (A). We reset when we've scrolled this far.
-  let groupWidth = 0;
-
-  function measure() {
-    groupWidth = groupA.getBoundingClientRect().width;
-    // keep offset valid if something changes
-    if (groupWidth > 0) offset = offset % groupWidth;
-    lastTime = performance.now();
+  function openMenu() {
+    menu.classList.add("is-open");
+    menu.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden"; // prevent background scroll
   }
 
-  // Measure after layout + images load
-  requestAnimationFrame(measure);
-  window.addEventListener("load", measure);
+  function closeMenu() {
+    menu.classList.remove("is-open");
+    menu.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = ""; // restore scroll
+  }
 
-  // IMPORTANT: fix “scroll causes resize” on mobile by only reacting to width changes
-  let lastW = window.innerWidth;
-  window.addEventListener("resize", () => {
-    const w = window.innerWidth;
-    if (w === lastW) return;
-    lastW = w;
-    measure();
+  openBtn.addEventListener("click", openMenu);
+  closeBtn.addEventListener("click", closeMenu);
+
+  // Close if clicking the dark overlay (outside the panel)
+  menu.addEventListener("click", (e) => {
+    if (e.target === menu) closeMenu();
   });
 
-  function tick(now) {
-    const dt = (now - lastTime) / 1000;
-    lastTime = now;
-
-    if (groupWidth > 0) {
-      offset += SPEED * dt;
-
-      // When we've moved one full group, snap back.
-      // This is seamless because group B is identical and currently in view.
-      if (offset >= groupWidth) offset -= groupWidth;
-
-      track.style.transform = `translateX(${-offset}px)`;
+  // Close on ESC
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && menu.classList.contains("is-open")) {
+      closeMenu();
     }
+  });
 
-    requestAnimationFrame(tick);
-  }
-
-  requestAnimationFrame(tick);
+  // Close after clicking a link
+  links.forEach((a) => a.addEventListener("click", closeMenu));
 })();
