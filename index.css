@@ -5,6 +5,12 @@
     font-family: roboto, sans-serif;
 }
 
+/* Hide desktop nav by default for small screen */
+
+.desktop-nav-link {
+    display: none;
+}
+
 nav {
     background-color: black;
     height: 90px;
@@ -309,3 +315,182 @@ footer {
     }
 
 }
+
+@media (min-width: 768px) {
+    
+    /* Banner */
+
+    #banner {
+        height: 400px;
+        width: 100%;
+    }
+
+    #banner-image {
+        height: 400px;
+    }
+
+    #banner-shadow {
+        height: 400px;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+
+    /* How it works */
+
+    #how-it-works-title {
+        margin-top: 40px;
+        margin-left: 20px;
+        padding: 40px 0px;
+    }
+
+    .hiw-card-title {
+        font-size: 20px;
+    }
+
+    /* Partner with us */
+
+    #partner-with-us {
+        padding: 40px 0px;
+    }
+
+    #partner-with-us-text-container {
+        margin-left: 20px;
+    }
+
+    #partner-with-us-text-container > h2 {
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+
+    #partner-with-us-text-container > p {
+        font-size: 18px;
+    }
+
+    /* Contact us */
+
+    #contact-us {
+        margin: 20px 0px;
+    }
+
+    #contact-us > h2 {
+        font-size: 32px;
+    }
+
+    #contact-us > p {
+        font-size: 18px;
+    }
+
+    /* Footer */
+
+    footer {
+        font-size: 16px;
+    }
+
+}
+
+/* Desktop nav styles */
+
+@media (min-width: 1024px) {
+    #mobile-menu, #nav-hamburger {
+        display: none;
+    }
+
+    .desktop-nav-link {
+        display: inline;
+    }
+
+    /* Banner */
+
+    #banner {
+        height: 500px;
+        width: 100%;
+    }
+
+    #banner-image {
+        height: 500px;
+    }
+
+    #banner-shadow {
+        height: 500px;
+    }
+
+    h1 {
+        font-size: 62px;
+    }
+
+    #slogan {
+        font-size: 24px;
+    }
+
+    /* Sponsors */
+    
+    #sponsors-title {
+        font-size: 32px;
+    }
+
+    /* How it works */
+
+    #how-it-works-title {
+        font-size: 32px;
+    }
+
+    #how-it-works-grid {
+        justify-content: space-evenly;
+        margin-bottom: 40px;
+    }
+
+    .hiw-card > img {
+        height: 100px;
+        width: 100px;
+    }
+
+    .hiw-card-title {
+        font-size: 24px;
+    }
+
+    .hiw-card-text {
+        font-size: 24px;
+    }
+
+    /* Partner with us */
+
+    #partner-with-us {
+        padding: 40px 0px;
+    }
+
+    #partner-with-us-text-container {
+        margin-left: 20px;
+    }
+
+    #partner-with-us-text-container > h2 {
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+
+    #partner-with-us-text-container > p {
+        font-size: 18px;
+    }
+
+    /* Contact us */
+
+    #contact-us {
+        margin: 20px 0px;
+    }
+
+    #contact-us > h2 {
+        font-size: 32px;
+    }
+
+    #contact-us > p {
+        font-size: 18px;
+    }
+
+    /* Footer */
+
+    footer {
+        font-size: 16px;
+    }
+}
+
