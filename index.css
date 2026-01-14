@@ -5,6 +5,8 @@
     font-family: roboto, sans-serif;
 }
 
+/* Body sizing */
+
 /* Hide desktop nav by default for small screen */
 
 .desktop-nav-link {
@@ -325,7 +327,7 @@ footer {
         width: 100%;
     }
 
-    #banner-image {
+    #banner {
         height: 400px;
     }
 
@@ -493,4 +495,3 @@ footer {
         font-size: 16px;
     }
 }
-
