@@ -177,6 +177,16 @@ h1 {
     font-weight: lighter;
 }
 
+@media (min-width: 768px) {
+    #how-it-works {
+        margin: 0px 40px;
+    }
+}
+
+/* Contact us */
+
+
+
 /* Partner with us */
 
 #partner-with-us {
